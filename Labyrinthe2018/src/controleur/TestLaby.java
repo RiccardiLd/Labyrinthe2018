@@ -101,10 +101,9 @@ public class TestLaby {
 
             TestLaby test;
             test = new TestLaby(new File(nomlaby)); // instancier le labyrinthe à partir du fichier
-            fen.setVisible(true);
-
-            /*
-            console.affiche(laby); // affiche le labyrinthe en console
+            fen.affiche(laby);
+            
+            //console.affiche(laby); // affiche le labyrinthe en console
 
             char choix = console.menu(); // afficher le menu labyrinthe en mode console
 
@@ -120,7 +119,7 @@ public class TestLaby {
                     break;
                 default:
                     System.out.println("Erreur de choix");
-            }*/
+            }
         } catch (FileFormatException ffe) {
             System.out.println("Problème de format du fichier !");
         }
