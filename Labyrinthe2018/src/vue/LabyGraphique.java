@@ -13,6 +13,6 @@ public class LabyGraphique extends JFrame{
     
     public LabyGraphique() { // constructeur 
         setTitle("Ma premiere fenetre"); 
-        setSize (300, 150);
+        setSize(300, 150);
     }
 }
