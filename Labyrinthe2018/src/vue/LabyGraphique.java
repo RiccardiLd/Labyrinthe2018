@@ -35,6 +35,21 @@ public class LabyGraphique extends JFrame{
                 pan.add(boutons[i][j]);
             }
         }
+        // À compléter : 
+        for (int y = 0; y < laby.getTailleY(); y++) {
+            for (int x = 0; x < laby.getTailleX(); x++) {
+                Case c = laby.getCase(y, x);
+                if (c instanceof CaseMur) {
+                    // Mur
+                } else {
+                    if (c.getVisited()) {
+                        // Case vide visitée
+                    } else {
+                        // Case vide non visitée
+                    }
+                }
+            }
+        }
         // rendre la fenetre visible
         this.setVisible(true);
     }

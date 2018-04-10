@@ -48,7 +48,7 @@ public class LabyConsole {
      * @param c 
      */
     public void affiche(Case c) {
-        System.out.println("ligne = " + c.getPositionY() + " colonne=" + c.getPositionX());
+        System.out.println("ligne = " + c.getPositionY() + " colonne = " + c.getPositionX());
     }
 
     /**
