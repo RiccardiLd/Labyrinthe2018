@@ -21,9 +21,11 @@ public class LabyGraphique extends JFrame{
         setTitle ("Mon labyrinthe");
         setSize (600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
         pan = new JPanel(); // instancier le panneau 
         menu = new JPanel(); // menu
         lab = new JPanel(); // labyrinthe
+        
         pan.setLayout(new BoxLayout(pan, BoxLayout.LINE_AXIS));
         pan.add(lab);
         pan.add(menu);
@@ -33,6 +35,7 @@ public class LabyGraphique extends JFrame{
     // Méthode qui affiche la grille du labyrinthe 
     public void affiche(Labyrinthe laby) {
         labInit(laby);
+        menuInit(laby);
         // À compléter : 
         for (int y = 0; y < laby.getTailleY(); y++) {
             for (int x = 0; x < laby.getTailleX(); x++) {
@@ -67,5 +70,19 @@ public class LabyGraphique extends JFrame{
                 lab.add(boutons[i][j]);
             }
         }
+    }
+    
+    public void menuInit(Labyrinthe laby) {
+        menu.setLayout(new BoxLayout(menu, BoxLayout.PAGE_AXIS));
+        JButton setDFS = new JButton();
+        JButton setRandom = new JButton();
+        JButton setExit = new JButton();
+        
+        menu.add(setDFS);
+        setDFS.setText("DFS");
+        menu.add(setRandom);
+        setRandom.setText("Random");
+        menu.add(setExit);
+        setExit.setText("Exit");
     }
 }

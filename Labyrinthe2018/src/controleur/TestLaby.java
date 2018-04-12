@@ -95,10 +95,11 @@ public class TestLaby {
     public static void main(String[] args) {            
         try {
             console = new LabyConsole(); //  instancier la console  
-            
+            /*
             System.out.println("Entrez le nom du fichier du labyrinthe :");
             String nomlaby = console.toString(); // récupérer le nom du fichier
-
+            */
+            String nomlaby = "labyrinthe.txt";
             TestLaby test;
             test = new TestLaby(new File(nomlaby)); // instancier le labyrinthe à partir du fichier
             fen.affiche(laby);
