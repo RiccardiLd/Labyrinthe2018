@@ -6,65 +6,55 @@ package vue;
 import javax.swing.*;
 import java.awt.*;
 import modele.*;
-import java.io.File;
-import java.io.IOException; 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 
 /**
  *
  * @author riccardild
  */
-public class LabyGraphique extends JFrame{
+public class LabyGraphique extends JFrame /*implements ActionListener*/{
     private final JPanel pan ; // panneau
     private final JPanel lab;
     private final JPanel menu; // gère les choix
-    private Image mur;
-    private Image chemin;
     private JButton boutons[][]; // matrice de boutons
     
-    public LabyGraphique (){ // constructeur
-        init();
-        
+    public LabyGraphique (){ // constructeur        
         pan = new JPanel(); // instancier le panneau 
         menu = new JPanel(); // menu
         lab = new JPanel(); // labyrinthe
-        
         pan.setLayout(new BoxLayout(pan, BoxLayout.LINE_AXIS));
         pan.add(lab);
         pan.add(menu);
-        getContentPane().add(pan); // ajouter le panneau dans la fenêtre
-        
-        menuInit();
     }
     
     public void init() {
+        getContentPane().add(pan); // ajouter le panneau dans la fenêtre
         setTitle ("Labyrinthe");
         setSize (470, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+        menuInit();
     }
     
     // Méthode qui affiche la grille du labyrinthe 
     public void affiche(Labyrinthe laby) {
-        labInit(laby);   
-        
-        
+        /*
+        Créer deuxième matrice de boutons por afficher perso + départ/arrivée
+        Images devront être transparentes
+        */
         for (int y = 0; y < laby.getTailleY(); y++) {
             for (int x = 0; x < laby.getTailleX(); x++) {
                 Case c = laby.getCase(y, x);
                 if (c instanceof CaseMur) {
                     // Mur
-                    boutons[y][x].setIcon(new ImageIcon(mur));
+                    boutons[y][x].setText("X");
                     boutons[y][x].setBorder(null);
                 } else {
                     if (laby.getCurrentPositionX() == x && laby.getCurrentPositionY() == y) {
-                        // Case actuelle
+                        // Case actuelleÒ
                         boutons[y][x].setText("V");
                         boutons[y][x].setBorder(null);
                     } else {
-                        // Case vide non visitée
-                        boutons[y][x].setIcon(new ImageIcon(chemin));
+                        // Case vide
+                        boutons[y][x].setText("_");
                         boutons[y][x].setBorder(null);
                     }
                 }
@@ -86,30 +76,16 @@ public class LabyGraphique extends JFrame{
                 lab.add(boutons[i][j]);
             }
         }
-        
-        BufferedImage bufMur = null;
-        BufferedImage bufChemin = null;
-        try {
-          bufMur = ImageIO.read(new File("Img/wall.jpg"));
-          bufChemin = ImageIO.read(new File("Img/floor.jpg"));
-        } catch (IOException e) {
-            
-        }
-        mur = bufMur.getScaledInstance(75, 75, Image.SCALE_SMOOTH);
-        chemin = bufChemin.getScaledInstance(75, 75, Image.SCALE_SMOOTH);
     }
     
     public void menuInit() {
         menu.setLayout(new BoxLayout(menu, BoxLayout.PAGE_AXIS));
-        JButton setDFS = new JButton();
-        JButton setRandom = new JButton();
-        JButton setExit = new JButton();
+        JButton setDFS = new JButton("DFS");
+        JButton setRandom = new JButton("Random");
+        JButton setExit = new JButton("Exit");
         
         menu.add(setDFS);
-        setDFS.setText("DFS");
         menu.add(setRandom);
-        setRandom.setText("Random");
         menu.add(setExit);
-        setExit.setText("Exit");
     }
 }

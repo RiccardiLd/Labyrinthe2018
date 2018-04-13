@@ -10,8 +10,7 @@ public class TestLaby {
 
     private static Labyrinthe laby;
     private static LabyConsole console;
-    private static LabyGraphique fen;
-
+    
     /**
      * Constructeur qui initialise le labyrinthe à partir du fichier en
      * paramètre
@@ -20,7 +19,6 @@ public class TestLaby {
      * @throws FileFormatException : problème de format de ficher
      */
     public TestLaby(File fic) throws FileFormatException {
-        this.fen = new LabyGraphique ();
         laby = new Labyrinthe(fic);
     }
 
@@ -102,7 +100,6 @@ public class TestLaby {
             String nomlaby = "labyrinthe.txt";
             TestLaby test;
             test = new TestLaby(new File(nomlaby)); // instancier le labyrinthe à partir du fichier
-            fen.affiche(laby);
             
             //console.affiche(laby); // affiche le labyrinthe en console
 
