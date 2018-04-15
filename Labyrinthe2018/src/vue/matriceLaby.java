@@ -68,6 +68,7 @@ public class matriceLaby implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton btn = (JButton) e.getSource();
+        // Debug
         System.out.println("\nThis button contains " + btn.getText() 
                 + ", clicked column " + btn.getClientProperty("column")
                 + ", row " + btn.getClientProperty("row"));
