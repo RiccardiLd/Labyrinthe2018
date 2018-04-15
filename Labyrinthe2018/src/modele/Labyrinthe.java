@@ -159,6 +159,7 @@ public class Labyrinthe {
 
     /**
      * accesseur retourne la position courante en X
+     * @return 
      */
     public int getCurrentPositionX() {
         return posX;
@@ -166,6 +167,7 @@ public class Labyrinthe {
 
     /**
      * accesseur retourne la position courante en Y
+     * @return 
      */
     public int getCurrentPositionY() {
         return posY;
@@ -173,6 +175,7 @@ public class Labyrinthe {
 
     /**
      * accesseur retourne le depart en X
+     * @return 
      */
     public int getDepartX() { // utile pour TestLaby
         return departX;
@@ -180,6 +183,7 @@ public class Labyrinthe {
 
     /**
      * accesseur retourne depart en Y
+     * @return 
      */
     public int getDepartY() { // utile pour TestLaby
         return departY;
@@ -187,6 +191,7 @@ public class Labyrinthe {
 
     /**
      * accesseur retourne l'arrivee en X
+     * @return 
      */
     public int getArriveeX() { // utile pour TestLaby
         return arriveeX;
@@ -194,6 +199,7 @@ public class Labyrinthe {
 
     /**
      * accesseur retourne l'arrivee en Y
+     * @return 
      */
     public int getArriveeY() { // utile pour TestLaby
         return arriveeY;
@@ -201,6 +207,7 @@ public class Labyrinthe {
 
     /**
      * accesseur retourne la taille en X
+     * @return 
      */
     public int getTailleX() { // utile pour TestLaby
         return tailleX;
@@ -208,6 +215,7 @@ public class Labyrinthe {
 
     /**
      * accesseur retourne la taille en Y
+     * @return 
      */
     public int getTailleY() { // utile pour TestLaby
         return tailleY;
