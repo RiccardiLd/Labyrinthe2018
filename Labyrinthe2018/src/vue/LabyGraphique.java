@@ -15,7 +15,7 @@ public class LabyGraphique extends JFrame {
     private final JPanel pan ; // panneau
     private final JPanel lab;
     private final JPanel menu; // gère les choix
-    private matriceLaby boutonsLaby;
+    private final MatriceLaby boutonsLaby;
     public JButton setDFS = new JButton("DFS");
     public JButton setRandom = new JButton("Random");
     public JButton setExit = new JButton("Exit");
@@ -27,7 +27,7 @@ public class LabyGraphique extends JFrame {
         pan.setLayout(new BoxLayout(pan, BoxLayout.PAGE_AXIS));
         pan.add(lab);
         pan.add(menu);
-        boutonsLaby = new matriceLaby(laby);
+        boutonsLaby = new MatriceLaby(laby);
     }
     
     public void init(Labyrinthe laby) {
@@ -39,6 +39,7 @@ public class LabyGraphique extends JFrame {
         boutonsLaby.init(laby);
         labInit(laby);
         menuInit();
+        // rendre la fenetre visible
         this.setVisible(true);
     }
     

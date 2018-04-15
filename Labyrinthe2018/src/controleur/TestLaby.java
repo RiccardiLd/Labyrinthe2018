@@ -2,7 +2,9 @@
 package controleur;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
+import javax.swing.Timer;
 import modele.*;
 import vue.*;
 
@@ -72,7 +74,6 @@ public class TestLaby {
     public boolean deplacerAuto() {
         boolean stop = false;
         Case macase;
-
         while (!stop) {
             try {
                 // se déplacer aléatoirement
@@ -126,7 +127,7 @@ public class TestLaby {
             graphique.setExit.addActionListener((ActionEvent e) -> {
                 //Perform function when button is pressed
                 System.exit(0);
-            }); 
+            });
             
         } catch (FileFormatException ffe) {
             System.out.println("Problème de format du fichier !");

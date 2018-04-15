@@ -13,11 +13,11 @@ import modele.*;
  *
  * @author riccardild
  */
-public class matriceLaby implements ActionListener{
+public class MatriceLaby implements ActionListener{
     public JButton boutons[][]; // matrice de boutons
     Labyrinthe laby;
 
-    public matriceLaby(Labyrinthe laby) {
+    public MatriceLaby(Labyrinthe laby) {
         this.laby = laby;
     }
     
@@ -86,14 +86,13 @@ public class matriceLaby implements ActionListener{
                 // Mouvement ok
                 try {
                     laby.move(y, x);
-                    System.out.println("\nlegal move");
+                    System.out.println("legal move");
                 } catch (ImpossibleMoveException ex) {
-                    System.out.println("\nillegal move");
+                    System.out.println("illegal move");
                 }
             }                                  
             else {                        
                 // Case vide                       
-                //boutonsLaby.boutons[y][x].setBorder(null);              
             }     
         }
         afficheMatrice();
